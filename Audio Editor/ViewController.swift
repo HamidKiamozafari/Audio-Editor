@@ -46,9 +46,9 @@ class ViewController: UIViewController {
                 
                 UIView.animate(withDuration: 2.0, animations: {
                     self.recordingButton.alpha = 1.0
-                    
+                    //fade in button
                 })
-        }	
+        }
     
     }
     @IBAction func stopRecording(_ sender: Any) {
