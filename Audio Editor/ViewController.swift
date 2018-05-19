@@ -36,8 +36,19 @@ class ViewController: UIViewController {
 
 
     @IBAction func recordAudio(_ sender: AnyObject) {
+            
+            self.recordingButton.alpha = 0.0
+            
         
-    print("Record button was pressed")
+            UIView.animate(withDuration: 2.0, animations: {
+                self.recordingButton.alpha = 0.0
+            }) { (finished) in
+                
+                UIView.animate(withDuration: 2.0, animations: {
+                    self.recordingButton.alpha = 1.0
+                    
+                })
+        }	
     
     }
     @IBAction func stopRecording(_ sender: Any) {
