@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SoundsRecordingController.swift
 //  Pitch Perfect
 //
 //  Created by David Ilenwabor on 5/18/18.
@@ -7,15 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class SoundsRecordingController: UIViewController {
+    
+    var audioRecorder : AVAudioRecorder!
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordingButton: UIButton!
+    @IBOutlet weak var stopLabel: UILabel!
     @IBOutlet weak var stopRecordingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        stopRecordingButton.isEnabled = false //disables stop recording button
+        stopLabel.isHidden = true //Hide Stop Label
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -29,13 +35,13 @@ class ViewController: UIViewController {
         print("View Did appear called")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
     @IBAction func recordAudio(_ sender: AnyObject) {
+        
+        stopRecordingButton.isEnabled = true //enables stopRecording button
+        stopLabel.isHidden = false
+        recordingButton.isEnabled = false
+        recordingLabel.text = "Recording in Progress"
             
             self.recordingButton.alpha = 0.0
             
@@ -51,8 +57,12 @@ class ViewController: UIViewController {
         }
     
     }
-    @IBAction func stopRecording(_ sender: Any) {
-        print("stop recording button was pressed")
+    @IBAction func stopRecording(_ sender: UIButton	) {
+        stopRecordingButton.isEnabled = false
+        stopLabel.isHidden = true
+        recordingButton.isEnabled = true
+        recordingLabel.text = "Tap to Record"
+        
     }
 }
 
