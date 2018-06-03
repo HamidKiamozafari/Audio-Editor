@@ -1,6 +1,6 @@
 //
 //  SoundsRecordingController.swift
-//  Pitch Perfect
+//  Audio Editor
 //
 //  Created by David Ilenwabor on 5/18/18.
 //  Copyright © 2018 DJTech. All rights reserved.

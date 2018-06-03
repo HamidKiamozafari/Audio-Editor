@@ -1,6 +1,6 @@
 //
-//  SoundsPlayingViewController.swift
-//  Pitch Perfect
+//  SoundsPlayingController.swift
+//  Audio Editor
 //
 //  Created by David Ilenwabor on 6/2/18.
 //  Copyright © 2018 DJTech. All rights reserved.
