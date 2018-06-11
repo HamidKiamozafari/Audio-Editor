@@ -88,6 +88,7 @@ class SoundsRecordingController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.isMeteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
+       
         
     }
     
@@ -102,7 +103,7 @@ class SoundsRecordingController: UIViewController, AVAudioRecorderDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "recordingFinished"{
-            let soundPlayingVC = segue.destination as! SoundsPlayingViewController
+            let soundPlayingVC = segue.destination as! SoundsPlayingController
             let recordedUrl = sender as! URL
             soundPlayingVC.recordedAudioURL = recordedUrl
         }
